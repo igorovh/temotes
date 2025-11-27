@@ -2,7 +2,6 @@ package api
 
 import (
 	"github.com/gofiber/fiber/v2"
-	"github.com/gofiber/fiber/v2/middleware/healthcheck"
 	"temotes/temotes/api/endpoints"
 )
 
@@ -21,5 +20,6 @@ func setupRoutes(app *fiber.App) {
 	v1Channel.Get("/id", endpoints.GetChannelIdentifiers)
 
 	// Healthcheck
-	app.Use(healthcheck.New())
+	app.Get("/health", endpoints.HealthCheckHandler)
+	app.Head("/health", endpoints.HealthCheckHandler)
 }

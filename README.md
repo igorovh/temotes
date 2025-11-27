@@ -37,10 +37,7 @@ Running and building the application is as simple as in any other Go project.
 
 ### Health Endpoints
 
-The API provides two health check endpoints for monitoring:
-
-- **Liveness Probe** – checks if the server is running (`/livez`)
-- **Readiness Probe** – checks if the application and its dependencies are ready to handle requests (`/readyz`)
+The API provides health check endpoints for monitoring: `/health`
 
 # License
 
